@@ -1,15 +1,19 @@
 {
   "name": "ds-ui-library",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwiyantop/ds-ui-library.git"
+  },
+  "homepage": "https://github.com/dwiyantop/ds-ui-library",
   "type": "module",
-  "main": "dist/ds-ui-library.umd.js",
-  "module": "dist/ds-ui-library.es.js",
+  "main": "dist/ds-ui-library-umd.js",
+  "module": "dist/ds-ui-library-es.js",
   "types": "dist/main.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/ds-ui-library.es.js",
-      "require": "./dist/ds-ui-library.umd.js",
+      "import": "./dist/ds-ui-library-es.js",
+      "require": "./dist/ds-ui-library-umd.js",
       "types": "./dist/main.d.ts"
     },
     "./dist/style.css": "./dist/style.css"

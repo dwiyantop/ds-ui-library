@@ -1,117 +1,83 @@
-# DS UI Library
+## Usage/Examples
 
-## Overview
+```javascript
+import { SelectDropdown } from 'ds-ui-library'
 
-The DS UI Library is a component library designed to provide reusable UI components for React applications. Currently, it includes a customizable Select Dropdown component. This library is built using modern tools and technologies to ensure a smooth development experience and high-quality output.
+function App() {
+  const options: DropdownOptionItem[] = [
+    { label: 'Very Long Option Label One', value: 'option1' },
+    { label: 'A Lengthy Description for Option Two', value: 'option2' },
+    { label: 'Extended Label Name for Option Three', value: 'option3' },
+    { label: 'A Prolonged Option Label Example Number Four', value: 'option4' },
+    { label: 'Detailed Label for the Fifth Option Item', value: 'option5' },
+    { label: 'An Exceedingly Long Option Label for Item Six', value: 'option6' },
+    { label: 'Option Label Seven with Quite an Extensive Description', value: 'option7' },
+    { label: 'This is a Very Extended Option Label for Item Eight', value: 'option8' },
+    { label: 'Option Number Nine with a Long Descriptive Title', value: 'option9' },
+    { label: 'A Lengthy and Descriptive Label for Option Ten', value: 'option10' },
+    { label: 'Extensive Label Name for the Eleventh Option Item', value: 'option11' },
+    { label: 'Option Twelve Featuring a Detailed Description', value: 'option12' },
+    { label: 'This Option Label is Quite Lengthy and Descriptive for Thirteen', value: 'option13' },
+    { label: 'Extended Option Label for Number Fourteen', value: 'option14' },
+    { label: 'Option Fifteen with a Remarkably Long Label', value: 'option15' },
+    { label: 'A Very Detailed Description for the Sixteenth Option Item', value: 'option16' },
+    { label: 'Seventeenth Option with an Extremely Extended Label', value: 'option17' },
+    { label: 'Eighteenth Option Featuring a Lengthy Label', value: 'option18' },
+    { label: 'Nineteenth Option Item with an Elaborate Label', value: 'option19' },
+    { label: 'Option Number Twenty with a Protracted Descriptive Label', value: 'option20' },
+  ];
 
-## Tech Stack
+  const renderCustomOption = (option: CustomOptionRenderParams) => (
+    <div
+      className={clsx(
+        'px-2 py-1.5 text-sm text-purple-400 hover:text-purple-600 cursor-pointer',
+        option.selected ? 'font-semibold ' : 'font-light ',
+      )}
+    >
+      <strong>{option.item.label}</strong>
+    </div>
+  );
 
-Vite, React, TailwindCSS, Storybook
+  return (
+    <div className="p-8 space-y-8">
+      <h1 className="text-2xl font-bold">Select Dropdown</h1>
+      <div>
+        <h3 className="mb-1 text-lg text-gray-500 font-semibold">Default</h3>
+        <SelectDropdown options={options} placeholder="Please select data" />
+      </div>
+      <div>
+        <h3 className="mb-1 text-lg text-gray-500 font-semibold">Searchable</h3>
+        <SelectDropdown options={options} searchable placeholder="Please select data" />
+      </div>
+      <div>
+        <h3 className="mb-1 text-lg text-gray-500 font-semibold">Multiple</h3>
+        <SelectDropdown options={options} searchable multiple placeholder="Please select data" />
+      </div>
 
-## Project Structure
+      <div>
+        <h3 className="mb-1 text-lg text-gray-500 font-semibold">Portal</h3>
+        <SelectDropdown
+          options={options}
+          multiple
+          searchable
+          placeholder="Please select data"
+          portalContainerId="root"
+        />
+      </div>
 
-    .
-    ├── .storybook              # Contains configuration files for Storybook.
-    ├── .vscode
-    ├── .dist                   # This directory is generated when you build UI Library for deployment from lib folder.
-    ├── lib                     # The source code for the component library.
-    ├── node_modules
-    ├── public
-    ├── src                     # The source code for Stories of Storybook.
-    ├── storybook-static        # This directory is generated when you build Storybook for deployment.
-    ├── .eslintrc.cjs
-    ├── .gitignore
-    ├── .prettierignore
-    ├── .prettierrc
-    ├── index.html
-    ├── package.json
-    ├── postcss.config.js
-    ├── README.md
-    ├── tailwind.config.ts
-    ├── tsconfig-build.json
-    ├── tsconfig.json
-    ├── tsconfig.node.json
-    └── vite.config.ts          # This file contains configuration for Vite, the build tool and development server used in the project.
+      <div>
+        <h3 className="mb-1 text-lg text-gray-500 font-semibold">Custom Render</h3>
+        <SelectDropdown
+          options={options}
+          multiple
+          searchable
+          placeholder="Please select data"
+          customOptionRender={renderCustomOption}
+        />
+      </div>
+    </div>
+  );
+}
 
-## Installation
-
-1. Clone the repository:
-
-```bash
-git clone git@github.com:dwiyantop/ds-ui-library.git
-cd my-project
+export default App;
 ```
-
-2. Navigate to the project directory:
-
-```bash
-cd ds-ui-library
-```
-
-3. Install dependencies:
-
-```bash
-yarn install
-```
-
-## Run Locally
-
-#### Development:
-
-This command starts a Vite development server for local development.
-
-```bash
-yarn dev
-```
-
-#### Build:
-
-This command compiles TypeScript and builds the UI library using Vite. It generates production-ready files inside `/dist` folder.
-
-```bash
-yarn build
-```
-
-#### Preview:
-
-This command starts a preview server to test the production build.
-
-```bash
-yarn preview
-```
-
-#### Lint:
-
-This command runs ESLint to check for linting issues in the codebase. It reports unused disable directives and limits warnings.
-
-```bash
-yarn lint
-```
-
-#### Lint and Fix:
-
-This command runs ESLint and automatically fixes issues where possible.
-
-```bash
-yarn lint-fix
-```
-
-#### Storybook:
-
-This command starts Storybook to develop and view UI components in isolation. By default, it runs on port 6006.
-
-```bash
-yarn storybook
-```
-
-#### Build Storybook:
-
-This command builds the Storybook static files for deployment.
-
-```bash
-yarn build-storybook
-```
-
-## Documentation
-
-[Documentation](https://tbd)
