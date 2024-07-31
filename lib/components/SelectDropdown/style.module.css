@@ -1,0 +1,54 @@
+.sdContainer {
+  @apply relative w-full;
+}
+
+.sdSelectControl {
+  @apply w-full flex justify-between items-center gap-2 px-2 py-2 border border-slate-300 rounded-md shadow-sm h-9;
+  @apply text-sm;
+}
+
+.sdSelectControlFocus {
+  @apply outline-none border-purple-500 ring-1 ring-purple-500;
+}
+
+.sdDropdown {
+  @apply absolute w-full p-1.5 mt-1 border border-slate-300 rounded-md shadow-md hidden;
+  @apply bg-white;
+  @apply z-[1001];
+}
+
+.sdDropdownOpen {
+  @apply flex flex-col gap-1.5;
+}
+
+.sdDropdownList {
+  @apply space-y-0.5 overflow-auto;
+}
+
+.sdDropdownItem {
+  @apply block px-3 py-2 rounded-md text-sm text-gray-500 hover:bg-purple-100 cursor-pointer;
+}
+
+.sdDropdownItemSelected {
+  @apply bg-gray-100;
+}
+
+.sdDelectedItemLabel {
+  @apply flex items-center gap-1.5 px-2 py-1 rounded-md text-xs bg-purple-400 text-white;
+}
+
+.sdSearch {
+  @apply relative;
+}
+
+.sdSearchLeadingIcon {
+  @apply absolute top-1/2 left-2 transform -translate-y-1/2;
+}
+
+.sdSearchTrailingIcon {
+  @apply absolute top-1/2 right-2 transform -translate-y-1/2;
+}
+
+.sdSearchInput {
+  @apply w-full flex items-center justify-start px-8 border border-slate-300 focus:outline-none focus:border-purple-500 focus:ring-purple-500 rounded-md shadow-sm h-8 text-sm;
+}
