@@ -1,10 +1,30 @@
+# DS UI Library
+
+## Overview
+
+The DS UI Library is a component library designed to provide reusable UI components for React applications. Currently, it includes a customizable Select Dropdown component. This library is built using modern tools and technologies to ensure a smooth development experience and high-quality output.
+
+## Installation
+
+1. Install ds-ui-library
+
+```bash
+yarn add ds-ui-library
+```
+
+2. Import style in to your entry point
+
+```javascript
+import 'ds-ui-library/dist/style.css';
+```
+
 ## Usage/Examples
 
 ```javascript
-import { SelectDropdown } from 'ds-ui-library'
+import { SelectDropdown } from 'ds-ui-library';
 
 function App() {
-  const options: DropdownOptionItem[] = [
+  const options = [
     { label: 'Very Long Option Label One', value: 'option1' },
     { label: 'A Lengthy Description for Option Two', value: 'option2' },
     { label: 'Extended Label Name for Option Three', value: 'option3' },
@@ -27,7 +47,7 @@ function App() {
     { label: 'Option Number Twenty with a Protracted Descriptive Label', value: 'option20' },
   ];
 
-  const renderCustomOption = (option: CustomOptionRenderParams) => (
+  const renderCustomOption = (option) => (
     <div
       className={clsx(
         'px-2 py-1.5 text-sm text-purple-400 hover:text-purple-600 cursor-pointer',
