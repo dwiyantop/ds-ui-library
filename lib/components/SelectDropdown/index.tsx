@@ -100,8 +100,10 @@ const SelectDropdown: React.FC<SelectDropdownProps> = ({
           </div>
         </div>
       );
+    } else {
+      const item = options.find((option) => option.value === value);
+      return <span>{item ? item.label : value}</span>;
     }
-    return <span>{value}</span>;
   };
 
   const highlightText: string | React.FC<{ text: string; highlight: string }> = ({ text, highlight }) => {
